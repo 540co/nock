@@ -28,11 +28,23 @@ var request = require('request');
 
 nock.recorder.rec();
 
-var opt = options;
+var opt = {};
 opt.url = "https://dre.540.co/api/reactions";
+opt.qs = {"limit" : 5};
 opt.method = "GET";
 opt.headers = {};
 opt.json = true;
+
+request(opt);
+
+var opt = {};
+opt.url = "https://dre.540.co/api/searches";
+opt.qs = {"limit" : 5};
+opt.method = "GET";
+opt.headers = {};
+opt.json = true;
+
+request(opt);
 
 
 ```
